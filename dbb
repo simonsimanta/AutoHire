@@ -1,0 +1,93 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct 12 10:38:01 2018
+
+@author: Admin
+"""
+
+import sqlite3
+con= sqlite3.connect('candidate.db')
+con.execute('''Create table candidates
+         (sr_no int not null,
+         name text not null,
+         email text primary key not null,
+         experience text
+         headline text, 
+         company text not null,
+         school text,
+         location text, 
+         summary text,
+         skills text not null,
+         publications text not null,
+         certification text,
+         courses text,
+         projects text,
+         honors text,
+         languages text,
+         organizations text,
+         interests text);''')
+con.close()
+con.execute('''insert into candidate (sr_no,name,email,experience,headline,company,school,location,summary,skills,publications,certification,courses,projects,honors,languages,organizations,intersts) 
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', (sr,n,email,exp,h,com,sch,loc,summ,skl,pub,cert,crs,pro,hns,lang,org,intr))
+
+
+
+
+
+
+'''CREATE TABLE IF NOT EXISTS candidate(name text PRIMARY KEY,
+         headline text,
+         company text,
+         school text,
+         location text, 
+         summary text,
+         skills text,
+         publications text,
+         certification text,
+         courses text,
+         projects text,
+         honors text,
+         languages text,
+         organizations text,
+         interests text,
+         experiences_title text,
+         experiences_company text,
+         experiences_date_range text,
+         experiences_location text,
+         experiences_description text)'''
+         
+         
+         
+with sql.connect("candidate.db") as conn:
+    cur = conn.cursor()
+    for i in j:
+        experiences_title=i["title"]
+        experiences_company=i["company"]
+        experiences_date_range=i["date_range"]
+        experiences_location=i["location"]
+        experiences_description=i["description"]
+    
+        cur.execute('''insert into candidate (name,headline,company, school,location,summary,skills,publications,certifications,courses,projects,honors,languages,organizations,interests,experiences_title,experiences_company,experiences_date_range,experiences_location,experiences_description) 
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', (name,headline,company, school,location,summary,skills,publications,certifications,courses,projects,honors,languages,organizations,interests,experiences_title,experiences_company,experiences_date_range,experiences_location,experiences_description))
+        
+        lst = [name,headline,company, school,location,summary,skills,publications,certifications,courses,projects,honors,languages,organizations,interests,experiences_title,experiences_company,experiences_date_range,experiences_location,experiences_description]
+        lsst1.append(lst)
+        lst = []
+        con.commit()
+        
+with sql.connect("candidate.db") as conn:
+    cur = conn.cursor()
+    for i in j:
+        experiences_title=i["title"]
+        experiences_company=i["company"]
+        experiences_date_range=i["date_range"]
+        experiences_location=i["location"]
+        experiences_description=i["description"]
+    
+        cur.execute('''insert into candidate (name,headline,company, school,location,summary,skills,publications,certifications,courses,projects,honors,languages,organizations,interests,experiences_title,experiences_company,experiences_date_range,experiences_location,experiences_description) 
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', (name,headline,company, school,location,summary,skills,publications,certifications,courses,projects,honors,languages,organizations,interests,experiences_title,experiences_company,experiences_date_range,experiences_location,experiences_description))
+        
+        lst = [name,headline,company, school,location,summary,skills,publications,certifications,courses,projects,honors,languages,organizations,interests,experiences_title,experiences_company,experiences_date_range,experiences_location,experiences_description]
+        lsst1.append(lst)
+        lst = []
+        con.commit()
